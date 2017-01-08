@@ -27,6 +27,7 @@
   :defer t
   :init
   (elpy-enable)
+  (setq elpy-rpc-backend "jedi")
   )
 
 ;;; init-44-coding-python.el ends here

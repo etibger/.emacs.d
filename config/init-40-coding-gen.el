@@ -29,6 +29,10 @@
   :init (add-hook 'after-init-hook 'global-company-mode)
   :config
   (use-package company-irony :ensure t :defer t)
+  (use-package company-quickhelp
+    :ensure t
+    :config
+    (company-quickhelp-mode t))
   (setq company-idle-delay              nil
 	company-minimum-prefix-length   2
 	company-show-numbers            t
@@ -37,7 +41,6 @@
 	)
   :bind ("C-;" . company-complete-common)
   )
-
 
 ;; === Tools ===
 

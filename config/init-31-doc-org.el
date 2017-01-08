@@ -23,6 +23,7 @@
   (add-hook 'org-mode-hook 'visual-line-mode)
   (add-hook 'org-mode-hook 'org-indent-mode)
   (add-hook 'org-mode-hook 'flyspell-mode)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
   :defer t
   :bind (("\C-c a" . org-agenda)
@@ -75,5 +76,12 @@
     "o" 'org-clock-out
     )
   )
+
+(use-package org-bullets
+  :defer t
+  :ensure t
+  :config
+  (require 'org-bullets)
+)
 
 ;;; init-31-doc-org.el ends here

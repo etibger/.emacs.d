@@ -32,8 +32,8 @@
 ;;; Code:
 
 ;; User Info
-(setq user-full-name "Gregory Stein")
-(setq user-mail-address "gregory.j.stein@gmail.com")
+(setq user-full-name "Tibor Gerlai")
+(setq user-mail-address "tibi.gerlai@gmail.com")
 
 ;; Install use-package if necessary
 (require 'package)
@@ -89,6 +89,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(flycheck-c/c++-clang-executable "clang-3.5")
  '(flycheck-c/c++-googlelint-executable "~/.emacs.d/scripts/cpplint.py")
  '(flycheck-google-cpplint-filter "-whitespace,+whitespace/braces")
  '(flycheck-google-cpplint-linelength "120")
@@ -101,4 +102,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "nil" :family "Monaco")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "nil" :family "Ubuntu Mono")))))
