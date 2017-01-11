@@ -57,6 +57,8 @@
   :defer t
   :init
   (projectile-global-mode)
+  (setq-default projectile-mode-line
+   '(:eval (format " PRJ[%s]" (projectile-project-name))))
   (setq projectile-completion-system 'helm)
   (use-package helm-projectile
     :ensure t
@@ -65,6 +67,11 @@
     )
   )
 
+(use-package counsel-projectile
+  :ensure t
+  :init
+  (counsel-projectile-on)
+  )
 ;; == ag ==
 
 ;; Note that 'ag' (the silver searcher) needs to be installed.
@@ -74,9 +81,9 @@
   :ensure t
   )
 
-(use-package helm-ag
-  :ensure t
-  )
+;; (use-package helm-ag
+;;   :ensure t
+;;   )
 
 ;; == compile ==
 
@@ -127,7 +134,7 @@
 	 )))
   (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
   (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))
-  
+
   )
 
 ;; == OTHER LANGUAGES ==
@@ -137,4 +144,7 @@
   :defer t
   )
 
+;; == Language independet settings ==
+;; remove trailing whitspace before save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;; init-40-coding-gen.el ends here

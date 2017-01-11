@@ -83,6 +83,14 @@
 ;; === misc ===
 (load-file "~/.emacs.d/config/init-70-misc-ledger.el")
 
+;; == Diminish ==
+(eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
+(add-hook 'emacs-lisp-mode-hook
+  (lambda()
+    (setq mode-name "el")))
+(setq-default projectile-mode-line
+ '(:eval (format " PRJ[%s]" (projectile-project-name))))
+
 ;;; init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
