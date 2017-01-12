@@ -56,7 +56,7 @@
   :ensure t
   :defer t
   :init
-  (projectile-global-mode)
+  (projectile-mode)
   (setq-default projectile-mode-line
    '(:eval (format " PRJ[%s]" (projectile-project-name))))
   (setq projectile-completion-system 'ivy)

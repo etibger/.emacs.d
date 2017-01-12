@@ -21,25 +21,12 @@
       initial-scratch-message nil
       initial-major-mode 'markdown-mode)
 
-;; == Load Custom Theme ==
-
-;;; Zenburn
-;;(use-package zenburn-theme
-;;  :ensure t
-;;  :config (load-theme 'zenburn t)
-;;  )
-
-;;; Solarized
-;; (use-package color-theme :ensure t)
-;; (use-package color-theme-solarized
-;;   :ensure t
-;;   :init (load-theme 'solarized t)
-;;  )
-;; (use-package solarized-theme
-;;   :ensure t
-;;   :init (load-theme 'solarized-dark t)
-;;   )
-
+;; == Set custom faces ==
+;; increase default size
+(custom-set-faces
+'(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 136 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+;; change the region color to something which is visible for solarized
+(custom-set-faces '(region ((t (:background "#93a1a1" :foreground "DarkOrange3" :inverse-video t)))))
 ;; Set default fill column
 (setq-default fill-column 100)
 
