@@ -44,7 +44,7 @@
 ;; == Powerline ==
 (use-package powerline
   :ensure t
-  :config (powerline-center-evil-theme)
+  :config (powerline-default-theme)
   )
 
 ;; (use-package solarized-theme

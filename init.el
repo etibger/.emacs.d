@@ -97,6 +97,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(airline-display-directory nil)
+ '(airline-utf-glyph-branch 57504)
+ '(airline-utf-glyph-linenumber 57505)
+ '(airline-utf-glyph-readonly 57506)
+ '(airline-utf-glyph-separator-left 57520)
+ '(airline-utf-glyph-separator-right 57522)
+ '(airline-utf-glyph-subseparator-left 57521)
+ '(airline-utf-glyph-subseparator-right 57523)
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "962dacd99e5a99801ca7257f25be7be0cebc333ad07be97efd6ff59755e6148f" default)))
