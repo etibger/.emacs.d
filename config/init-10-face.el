@@ -30,19 +30,18 @@
 ;;  )
 
 ;;; Solarized
-(use-package color-theme :ensure t)
-(use-package color-theme-solarized
-  :ensure t
-  :init (load-theme 'solarized t)
-  )
-
-;; I prefer using a smaller font size than the default (and 'Monaco')
-(if (eq system-type 'darwin)
-    (custom-set-faces '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Monaco")))))
-  (custom-set-faces '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "nil" :family "Ubuntu Mono"))))))
+;; (use-package color-theme :ensure t)
+;; (use-package color-theme-solarized
+;;   :ensure t
+;;   :init (load-theme 'solarized t)
+;;  )
+;; (use-package solarized-theme
+;;   :ensure t
+;;   :init (load-theme 'solarized-dark t)
+;;   )
 
 ;; Set default fill column
-(setq-default fill-column 80)
+(setq-default fill-column 100)
 
 ;; quiet, please! No dinging!
 ;(setq visible-bell t)

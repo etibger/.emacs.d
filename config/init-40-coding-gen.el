@@ -59,20 +59,15 @@
   (projectile-global-mode)
   (setq-default projectile-mode-line
    '(:eval (format " PRJ[%s]" (projectile-project-name))))
-  (setq projectile-completion-system 'helm)
-  (use-package helm-projectile
+  (setq projectile-completion-system 'ivy)
+  (use-package counsel-projectile
     :ensure t
     :init
-    (helm-projectile-on)
+    (counsel-projectile-on)
     )
   )
 
-(use-package counsel-projectile
-  :ensure t
-  :init
-  (counsel-projectile-on)
-  )
-;; == ag ==
+; == ag ==
 
 ;; Note that 'ag' (the silver searcher) needs to be installed.
 ;; Ubuntu: sudo apt-get install ag
@@ -80,10 +75,6 @@
 (use-package ag
   :ensure t
   )
-
-;; (use-package helm-ag
-;;   :ensure t
-;;   )
 
 ;; == compile ==
 

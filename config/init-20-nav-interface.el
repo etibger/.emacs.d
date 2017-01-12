@@ -1,4 +1,4 @@
-;;; init-20-nav-interface.el --- Customize emacs interface (mostly Helm)
+;;; init-20-nav-interface.el --- Customize emacs interface (mostly Counsel)
 
 ;; Copyright (C) 2016 Gregory J Stein
 
@@ -35,11 +35,26 @@
   :ensure t
   :init
   (evil-mode 1)
-  (define-key evil-ex-map "b " 'helm-mini)
-  (define-key evil-ex-map "e" 'helm-find-files)
+  ;; (define-key evil-ex-map "b " 'helm-mini)
+  (define-key evil-ex-map "e" 'counsel-find-file)
   ;; Resolve sentence jumping issue
   (setq sentence-end-double-space nil)
   )
+
+;; == Powerline ==
+(use-package powerline
+  :ensure t
+  :config (powerline-center-evil-theme)
+  )
+
+;; (use-package solarized-theme
+;;   :ensure t
+;;   :config (load-theme 'solarized-dark)
+;;   )
+;; (use-package airline-themes
+;;   :ensure t
+;;   :config (load-theme 'airline-light)
+;;   )
 
 ;; == Counsel Mode ==
 (use-package counsel
@@ -82,7 +97,7 @@
 ;;   (require 'helm)
 ;;   (require 'helm-files)
 ;;   (require 'helm-config) ; Necessary for helm-mode
-  
+
 ;;   ;; Additional key bindings
 ;;   (bind-key "<tab>" 'helm-execute-persistent-action helm-map)
 ;;   (bind-key [escape] 'helm-keyboard-quit helm-map)
@@ -115,7 +130,7 @@
 ;;     (with-helm-buffer
 ;;       (setq cursor-in-non-selected-windows nil)))
 ;;   (add-hook 'helm-after-initialize-hook 'spacemacs//hide-cursor-in-helm-buffer)
-  
+
 ;;   :bind (("C-x b" . helm-mini)
 ;; 	 ("C-x C-f" . helm-find-files)
 ;; 	 ("M-x" . helm-M-x)

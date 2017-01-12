@@ -39,12 +39,6 @@
   (setq reftex-plug-into-AUCTeX t)
   (setq TeX-PDF-mode t)
   (setq reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource"))
-  
-  ;; Don't use Helm for the reftex-citation lookup
-  (eval-after-load 'helm-mode
-    '(add-to-list 'helm-completing-read-handlers-alist '(reftex-citation . nil))
-    )
-  
   )
 
 ;;; init-30-doc-gen.el ends here

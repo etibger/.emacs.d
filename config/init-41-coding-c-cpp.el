@@ -11,8 +11,7 @@
 ;; License: GNU General Public License (see init.el for details)
 
 ;;; Commentary:
-;; Tools for working with C/C++. This consists of:
-;;   helm-gtags :: make helm play nice with gtags
+;; Tools for working with C/C++.  This consists of:
 ;;   irony :: a clang-based completion engine (works with company)
 
 ;;; Code:
@@ -22,26 +21,20 @@
 
 ;; === Project Navigation ===
 
-;; == gtags && helm-gtags ==
-(use-package helm-gtags
+;; == gtags && counsel-gtags ==
+(use-package counsel-gtags
   :ensure t
   :defer t
   :init
-  ;; Enable helm-gtags-mode
-  (add-hook 'dired-mode-hook 'helm-gtags-mode)
-  (add-hook 'eshell-mode-hook 'helm-gtags-mode)
-  (add-hook 'c-mode-hook 'helm-gtags-mode)
-  (add-hook 'c++-mode-hook 'helm-gtags-mode)
-  (add-hook 'asm-mode-hook 'helm-gtags-mode)
-  :config
-  (bind-key "C-c g a" 'helm-gtags-tags-in-this-function helm-gtags-mode-map)
-  (bind-key "C-j" 'helm-gtags-select helm-gtags-mode-map)
-  (bind-key "M-." 'helm-gtags-dwim helm-gtags-mode-map)
-  (bind-key "M-," 'helm-gtags-pop-stack helm-gtags-mode-map)
-  (bind-key "C-c <" 'helm-gtags-previous-history helm-gtags-mode-map)
-  (bind-key "C-c >" 'helm-gtags-next-history helm-gtags-mode-map)
-  )
+  (add-hook 'c-mode-hook 'counsel-gtags-mode)
+  (add-hook 'c++-mode-hook 'counsel-gtags-mode)
 
+  (with-eval-after-load 'counsel-gtags
+    (define-key counsel-gtags-mode-map (kbd "M-t") 'counsel-gtags-find-definition)
+    (define-key counsel-gtags-mode-map (kbd "M-r") 'counsel-gtags-find-reference)
+    (define-key counsel-gtags-mode-map (kbd "M-s") 'counsel-gtags-find-symbol)
+    (define-key counsel-gtags-mode-map (kbd "M-,") 'counsel-gtags-pop-stack))
+  )
 
 ;; === Code Completion ===
 
@@ -80,7 +73,7 @@
 ;; === Other ===
 
 
-
+;; == this shit doesn't work I don't know why :(
 ;; == google-c-style && cpplint ==
 (use-package google-c-style
   :ensure t
@@ -92,7 +85,7 @@
   (use-package flycheck-google-cpplint
     :ensure t
     :config
-    
+
     (add-to-list 'flycheck-checkers 'c/c++-googlelint)
     (custom-set-variables
      '(flycheck-c/c++-googlelint-executable "~/.emacs.d/scripts/cpplint.py")
@@ -101,7 +94,7 @@
      '(flycheck-google-cpplint-linelength "120"))
     ;; This requires that google cpplint be installed
     ;; See: https://github.com/flycheck/flycheck-google-cpplint
-    
+
     (flycheck-add-next-checker 'c/c++-cppcheck 'c/c++-googlelint)
     )
   :config
