@@ -83,6 +83,8 @@
 ;; === misc ===
 (load-file "~/.emacs.d/config/init-70-misc-ledger.el")
 
+;; === custom functions ===
+(load-file "~/.emacs.d/config/init-100-custom-func.el")
 
 ;; == Diminish ==
 (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
@@ -91,3 +93,22 @@
     (setq mode-name "el")))
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(flycheck-c/c++-clang-executable "clang-3.5")
+ '(flycheck-c/c++-googlelint-executable "~/.emacs.d/scripts/cpplint.py")
+ '(flycheck-google-cpplint-filter "-whitespace,+whitespace/braces")
+ '(flycheck-google-cpplint-linelength "120")
+ '(flycheck-google-cpplint-verbose "3")
+ '(verilog-auto-indent-on-newline nil)
+ '(verilog-auto-newline nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 136 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(region ((t (:background "#93a1a1" :foreground "DarkOrange3" :inverse-video t)))))
